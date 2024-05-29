@@ -77,6 +77,12 @@ img.profilePic{
     border: 1px rgb(56, 56, 56) solid;
 }
 
+img.profileHeader{
+    width: 800px;
+    height: 200px;
+    border-radius: 1%;
+}
+
 header>button>div{
     padding-left: 12px;
     padding-right: 12px;
@@ -253,6 +259,13 @@ main{
 
 #whotfollow>div>div>p{
     margin: 0px;
+}
+
+#profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 a.followButton{
