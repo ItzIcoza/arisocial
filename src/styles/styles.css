@@ -8,7 +8,12 @@ html, body, main, footer{
     background-color: black;
     color: white;
     scroll-behavior: smooth;
+    transition: 0.2s linear;
 }
+
+div ,a{
+    transition: 0.2s linear;
+} 
 
 img.emoji {
     height: 1em;
@@ -193,7 +198,7 @@ p.settingsButton:hover{
     justify-content: right;
 }
 
-#searchChrip{
+#exploreChrip{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -235,15 +240,15 @@ main{
 }
 
 .tweet{
-    border: 1px rgb(56, 56, 56) solid;
     padding: 12px;
-    min-width: 35vw;
-    max-width: 35vw;
+    width: 35vw;
+    border-radius: 8px;
 }
 
 .tweet>.tweet{
-    min-width: unset;
-    max-width: 35vw;
+    width: 95%;
+    margin: auto;
+    
 }
 .tweetInfo{
     display: flex;
@@ -268,7 +273,7 @@ main{
     border-top: 1px rgb(56, 56, 56) solid;
 }
 
-#timelineSelect{
+#timelineSelect, .title{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -277,7 +282,7 @@ main{
     background-color: black;
 }
 
-#timelineSelect>a{
+#timelineSelect>a, title>a{
     text-align: center;
     width: 50%;
     padding: 12px;
@@ -321,14 +326,23 @@ main{
     border-radius: 12px;
 }
 
-#sideBar>div, #searchTrends>div{
+#sideBar>div, #exploreTrends>div{
     width: 100%;
     margin-bottom: 24px;
     border-radius: 12px;
+    background-color:#8b8b8b2d;
 }
 
-#sideBar>div>div, #searchTrends>div>div{
-    border: 1px rgb(56, 56, 56) solid;
+#sideBar>div>p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#sideBar>div>div{
+    padding: 12px;
+}
+
+#exploreTrends>div>div{
     padding: 12px;
 }
 
@@ -355,7 +369,7 @@ main{
     margin: 0px;
 }
 
-#searchTrends{
+#exploreTrends{
     display: flex;
     width: 100%;
 }
@@ -475,6 +489,7 @@ div#iconChirp>p{
     width: 35vw;
     height: 150px;
     color-scheme: dark;
+    background-color: #8b8b8b2d;
     resize: none;
     border: none;
     padding: 12px;
@@ -483,11 +498,12 @@ div#iconChirp>p{
     border-radius: 8px;
 }
 
-#searcher>textarea{
+#exploreer>textarea{
     margin-top: 12px;
     width: 35vw;
     height: 1.5em;
     color-scheme: dark;
+    background-color: #8b8b8b2d;
     resize: none;
     border: none;
     padding: 12px;
@@ -496,6 +512,18 @@ div#iconChirp>p{
     border-radius: 8px;
 }
 
+div#notFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 20vw;
+    flex-direction: column;
+}
+
+div#notFound>p{
+    text-align: center;
+}
 
 @media only screen and (min-width: 759px) {
     footer>div{
@@ -513,18 +541,21 @@ div#iconChirp>p{
     main{
         margin: 0px;
     }
+    #feed{
+        min-width: 90vw;
+    }
 
     header{
         padding: 0px;
         width: 0px;
     }
     div.tweet{
-        max-width: 90vw;
+        width: 95%;
         border: none;
         border-bottom:#8b8b8b2d 1px solid;
     }
     div.tweet>div.tweet{
-        max-width: 90vw;
+        width: 90%;
         border: #8b8b8b2d 1px solid
     }
     aside#sideBar{
@@ -534,5 +565,13 @@ div#iconChirp>p{
         border-top: none;
         border-left: none;
         border-right: none;
+    }
+    #composer>textarea,     #exploreer>textarea{
+        width: 90vw;
+        margin-top: 8px;
+    }
+
+    div#notFound{
+        width: 80vw;
     }
 }
