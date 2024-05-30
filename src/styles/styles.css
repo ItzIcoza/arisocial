@@ -3,12 +3,23 @@
     src: url(fonts/Jost.ttf);
 }
 
+html, body, main, footer{
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+}
+
 img.emoji {
     height: 1em;
     width: 1em;
     margin: 0 .05em 0 .1em;
     vertical-align: -0.1em;
     pointer-events: none;
+}
+
+h1{
+    font-weight: 600;
 }
 
 a{
@@ -20,6 +31,7 @@ a:hover{
     text-decoration: underline;
     cursor: pointer;
 }
+
 
 body{
     font-family: Jost, Arial, Helvetica, sans-serif;
@@ -40,14 +52,14 @@ header{
 }
 
 
-header>nav{
+header>div>nav{
     display: flex;
     flex-direction: column;
     width: moz-fit-content;
     width: 100%;
 }
 
-header>button{
+header>div>button{
     padding: 8px;
     background-color: black;
     border: none;
@@ -65,7 +77,7 @@ header>button{
     bottom: 0;
 }
 
-header>button:hover{
+header>div>button:hover{
     background-color: #8b8b8b2d;
     transition: none;
 }
@@ -90,19 +102,19 @@ img.profileHeader{
     border-radius: 1%;
 }
 
-header>button>div{
+header>div>button>div{
     padding-left: 12px;
     padding-right: 12px;
 }
 
-header>button>div>p{
+header>div>button>div>p{
     margin: 0px;
     color: white;
 }
 
 
 
-header>nav>a{
+header>div>nav>a{
     color: white;
     text-decoration: none;
     padding-bottom: 4px;
@@ -118,12 +130,28 @@ header>nav>a{
     transition: background-color .2s linear;
 }
 
+header>div>nav>p{
+    color: white;
+    text-decoration: none;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    flex-grow: 1;
+    width: fit-content;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 18px;
+    margin: 8px;
+    border-radius: 24px;
+    font-size: 32px;
+
+}
+
 a>i{
     padding-right: 8px;
 }
 
 
-header>nav>a:hover{
+header>div>nav>a:hover{
     background-color: #8b8b8b2d;
     transition: none;
     text-decoration: none;
@@ -153,7 +181,42 @@ p.settingsButton:hover{
     margin-top: 4px;
     text-align: center;
     color: white;
+}
 
+.newTweet:hover{
+    background-color: rgb(132, 101, 255);
+}
+
+#postChirpButton{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+#searchChrip{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.postChirp{
+    min-width: 52px;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgb(120, 86, 255);
+    margin-bottom: 4px;
+    margin-top: 4px;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    padding: 8px;
+    display: flex;
+}
+
+.postChirp:hover{
+    cursor: pointer;
+    background-color: rgb(132, 101, 255);
 }
 
 main{
@@ -174,14 +237,27 @@ main{
 .tweet{
     border: 1px rgb(56, 56, 56) solid;
     padding: 12px;
-    max-width: 30vw;
+    min-width: 35vw;
+    max-width: 35vw;
+}
+
+.tweet>.tweet{
+    min-width: unset;
+    max-width: 35vw;
 }
 .tweetInfo{
     display: flex;
+    flex-direction: row;
+}
+.tweetInfo>div{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
 }
 
-.tweetInfo>p{
-    margin: 12px;
+.tweetInfo>div>p{
+    margin: 0px;
+    padding-left: 8px;
 }
 
 .tweetInteract{
@@ -205,17 +281,18 @@ main{
     text-align: center;
     width: 50%;
     padding: 12px;
-    border: 1px rgb(56, 56, 56) solid;
+    border-bottom: 1px rgb(56, 56, 56) solid;
     border-top: none;
 }
 
 #timelineSelect>a:hover{
     background-color: #8b8b8b2d;
     cursor: pointer;
+    text-decoration: none;
 }
 
 
-#forYou{
+.selcted{
     border-bottom: 2px rgb(120, 86, 255) solid !important; 
 }
 
@@ -244,35 +321,43 @@ main{
     border-radius: 12px;
 }
 
-#sideBar>div>div{
+#sideBar>div, #searchTrends>div{
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 12px;
+}
+
+#sideBar>div>div, #searchTrends>div>div{
     border: 1px rgb(56, 56, 56) solid;
     padding: 12px;
 }
 
-
-
 #whotfollow>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#whotfollow>div>div{
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: start;
 }
 
-#whotfollow>div>div{
+#whotfollow>div>div>div{
     margin: 0px;
     padding-left: 12px;
     padding-right: 12px;
 }
 
-#whotfollow>div>div>p{
+#whotfollow>div>div>div>p{
     margin: 0px;
 }
 
-#profile{
+#searchTrends{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
 a.followButton{
@@ -284,9 +369,9 @@ a.followButton{
     color: white;
     border-radius: 12px;
     padding: 8px;
-    position: absolute;
-    left: 66%;
+    height: fit-content;
 }
+
 
 #menuSettings{
     display: none;
@@ -308,4 +393,146 @@ a.followButton{
 
 .clickedDown{
     background-color: #8b8b8b2d;
+}
+
+.downNow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    margin: auto;
+    height: 100vh;
+}
+
+#signin{
+    justify-content: center;
+}
+
+#login{
+    background-color: #8b8b8b2d;
+    padding: 12px;
+    height: 94vh;
+    border-radius: 8px;
+}
+
+footer>div{
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.646);
+    border-top: #8b8b8b2d 1px solid;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    justify-content: space-between;
+    align-items: center;
+    width: 87vw;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+footer>div>a{
+    font-size: 24px;
+
+}
+
+div#iconChirp>p{
+    color: white;
+    text-decoration: none;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    flex-grow: 1;
+    width: fit-content;
+    padding-left: 12px;
+    padding-right: 18px;
+    margin: 0px;
+    border-radius: 24px;
+    font-size: 24px;
+}
+
+
+.subText{
+    color: #8b8b8b;
+}
+
+.tweetInfo > p{
+    margin: 0px;
+    margin-left: 8px;
+}
+
+#trends>div>p{
+    margin: 0px;
+}
+
+.noMoreChirps{
+    text-align: center;
+}
+
+#composer>textarea{
+    margin-top: 12px;
+    width: 35vw;
+    height: 150px;
+    color-scheme: dark;
+    resize: none;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+}
+
+#searcher>textarea{
+    margin-top: 12px;
+    width: 35vw;
+    height: 1.5em;
+    color-scheme: dark;
+    resize: none;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+}
+
+
+@media only screen and (min-width: 759px) {
+    footer>div{
+        display: none;
+    }
+    div#iconChirp{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    div#desktopMenu {
+        display: none;
+    }
+    main{
+        margin: 0px;
+    }
+
+    header{
+        padding: 0px;
+        width: 0px;
+    }
+    div.tweet{
+        max-width: 90vw;
+        border: none;
+        border-bottom:#8b8b8b2d 1px solid;
+    }
+    div.tweet>div.tweet{
+        max-width: 90vw;
+        border: #8b8b8b2d 1px solid
+    }
+    aside#sideBar{
+        display: none;
+    }
+    #timelineSelect>a{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
 }
